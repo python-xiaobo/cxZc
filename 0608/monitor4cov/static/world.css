@@ -1,0 +1,91 @@
+body {
+	margin:0;
+	background:#FEF8EF
+}
+#area {
+	position:absolute;
+	height:15%;
+	line-height:170%;
+	left:2%;
+	top:1.5%;
+	font-weight:bold;
+	color:#000
+}
+a {
+	text-decoration:none;
+	color:#000000
+}
+#tit {
+	position: absolute;
+	width: 40%;
+	height: 10%;
+	top: 0%;
+	left: 30%;
+	color: balck;
+	font-size: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#tit span {
+	font-size:30px
+}
+#jump {
+	position:absolute;
+	height:10%;
+	top:5%;
+	left:2%;
+	color:#a92919;
+	font-size:20px;
+}
+#tim {
+	position: absolute;
+	height: 10%;
+	top: 5%;
+	right: 2%;
+	color: #000000;
+	font-size: 20px;
+}
+#right {
+	position:absolute;
+	height:80%;
+	width:50%;
+	left:50%;
+	top:10%
+}
+#left {
+	position:absolute;
+	height:80%;
+	width:50%;
+	right:50%;
+	top:10%
+}
+@media screen and (orientation:portrait) {
+	html {
+	width:100vmin;
+	height:100vmax
+}
+body {
+	width:100vmin;
+	height:100vmax
+}
+#gyroContain {
+	width:100vmax;
+	height:100vmin;
+	transform-origin:top left;
+	transform:rotate(90deg) translate(0,-100vmin)
+}
+}@media screen and (orientation:landscape) {
+	html {
+	width:100vmax;
+	height:100vmin
+}
+body {
+	width:100vmax;
+	height:100vmin
+}
+#gyroContain {
+	width:100vmax;
+	height:100vmin
+}
+}

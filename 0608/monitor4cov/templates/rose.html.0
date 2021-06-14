@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>疫情可视化</title>
+		<script src="../static/js/jquery.js"></script>
+		<!-- <script src="../static/js/echarts.min.js"></script> -->
+	<script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+		<script src="../static/js/china.js"></script>
+		<script src="../static/js/worldcloud.js"></script>
+		<link href="../static/css/main.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div id="title">大数据世界疫情分析与可视化</div>
+		<div id="time"></div>
+		<div>
+        <div id="worldmap" style="display:inline-block;"></div>
+		<div id="worldrose" style="display:inline-block;"></div>
+	</div>
+		   <script>
+        $(
+            function () {
+                var chart = echarts.init(document.getElementById('worldmap'), 'dark', {renderer: 'canvas'});
+                $.ajax({
+                    type: "GET",
+                    url: "http://127.0.0.1:5000/worldmap",
+                    dataType: 'json',
+                    success: function (result) {
+                        chart.setOption(result);
+                    }
+                });
+            }
+        )
+    	</script>
+		   <script>
+        $(
+            function () {
+                var chart = echarts.init(document.getElementById('worldrose'), 'dark', {renderer: 'canvas'});
+                $.ajax({
+                    type: "GET",
+                    url: "http://127.0.0.1:5000/rosemap",
+                    dataType: 'json',
+                    success: function (result) {
+                        chart.setOption(result);
+                    }
+                });
+            }
+        )
+    	</script>
+
+	</body>
+</html>

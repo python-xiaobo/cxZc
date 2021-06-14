@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据管理中心</title>
+
+    {% block title %}
+    {% end %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <link href="{{static_url('css/bootstrap.min.css')}}" rel="stylesheet" />
+    <link href="{{static_url('css/bootstrap-responsive.min.css')}}" rel="stylesheet" />
+    <link href="{{static_url('css/font-awesome.css')}}" rel="stylesheet" />
+
+    <link href="{{static_url('css/adminia.css')}}" rel="stylesheet" />
+    <link href="{{static_url('css/adminia-responsive.css')}}" rel="stylesheet" />
+
+    {% block meta %}
+    {% end %}
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+
+</head>
+<body>
+
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a class="brand" href="/">数据管理中心</a>
+                <div class="nav-collapse">
+                    <ul class="nav pull-right">
+
+                        <li class="divider-vertical"></li>
+
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle " href="#">
+                                {{ extra_info['nickname'] }} <b class="caret"></b>
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li class="divider"></li>
+                                <li><a href="/logout"><i class="icon-off"></i> 退出</a></li>
+                                <li><a href="http://127.0.0.1:5000"><i class="icon-off"></i> 返回主页面</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div> <!-- /nav-collapse -->
+
+            </div> <!-- /container -->
+        </div> <!-- /navbar-inner -->
+    </div> <!-- /navbar -->
+
+
+    <div id="content">
+        <div class="container">
+            <div class="row">
+
+                <div class="span3">
+                    <div class="account-container">
+                         <!-- /account-avatar -->
+
+                        <div class="account-details">
+                            <span class="account-name">{{ extra_info['nickname'] }}</span>
+                            <span class="account-actions">
+                            </span>
+                        </div> <!-- /account-details -->
+                    </div> <!-- /account-container -->
+
+                    <hr />
+
+                    <ul id="main-nav" class="nav nav-tabs nav-stacked">
+                        <li>
+                            <a href="/case1">
+                                <i class="icon-pushpin"></i>
+                                疫情数据管理
+                            </a>
+                        </li>
+                    </ul>
+                    <ul id="main-nav" class="nav nav-tabs nav-stacked">
+                        <li>
+                            <a href="http://localhost:5000/update4data">
+                                <i class="icon-pushpin"></i>
+                                启动爬虫更新数据
+                            </a>
+                        </li>
+                    </ul>
+                    <hr />
+
+                    <div class="sidebar-extra">
+                        {% block side%}
+                        {% end %}
+                    </div> <!-- .sidebar-extra -->
+
+                    <br />
+                </div> <!-- /span3 -->
+
+                <div class="span9">
+
+                    {% block content %}
+                    {% end %}
+
+                </div>
+
+            </div> <!-- /row -->
+        </div> <!-- /container -->
+    </div> <!-- /content -->
+
+    <div id="footer">
+
+    </div> <!-- /footer -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src="{{static_url('js/jquery-1.7.2.min.js')}}"></script>
+    <script src="{{static_url('js/bootstrap.js')}}"></script>
+
+    <script src="{{static_url('js/jquery.flot.js')}}"></script>
+    <script src="{{static_url('js/jquery.flot.pie.js')}}"></script>
+    <script src="{{static_url('js/jquery.flot.orderBars.js')}}"></script>
+    <script src="{{static_url('js/jquery.flot.resize.js')}}"></script>
+
+    <script src="{{static_url('js/excanvas.min.js')}}"></script>
+
+    {% block js%}
+    {% end %}
+
+</body>
+</html>
